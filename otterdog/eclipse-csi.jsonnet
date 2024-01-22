@@ -12,6 +12,18 @@ orgs.newOrg('eclipse-csi') {
   _repositories+:: [
     orgs.newRepo('otterdog') {
       description: "OtterDog is a tool to manage GitHub organizations at scale using a configuration as code approach. It is actively used by the Eclipse Foundation to manage its numerous projects hosted on GitHub.",
+      webhooks: [
+        orgs.newRepoWebhook('https://readthedocs.org/api/v2/webhook/otterdog/260699/') {
+          content_type: "json",
+          events+: [
+            "create",
+            "delete",
+            "pull_request",
+            "push"
+          ],
+          secret: "pass:bots/technology.csi/readthedocs.org/otterdog-webhook-secret",
+        },
+      ],
     },
     orgs.newRepo('security-handbook') {
       description: "This repository contains the source for the Eclipse Foundation Security Handbook.",
