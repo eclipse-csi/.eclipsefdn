@@ -2,7 +2,7 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('eclipse-csi') {
   settings+: {
-    description: "",
+    description: "Test",
     name: "Eclipse Common Security Infrastructure",
     web_commit_signoff_required: false,
     workflows+: {
