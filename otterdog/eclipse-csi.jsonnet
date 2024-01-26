@@ -12,6 +12,14 @@ orgs.newOrg('eclipse-csi') {
   _repositories+:: [
     orgs.newRepo('otterdog') {
       description: "OtterDog is a tool to manage GitHub organizations at scale using a configuration as code approach. It is actively used by the Eclipse Foundation to manage its numerous projects hosted on GitHub.",
+      topics: [
+         "security",
+         "supply-chain",
+         "configuration-as-code",
+         "github-config",
+         "python",
+         "asyncio",
+      ],
       webhooks: [
         orgs.newRepoWebhook('https://readthedocs.org/api/v2/webhook/otterdog/260699/') {
           content_type: "json",
