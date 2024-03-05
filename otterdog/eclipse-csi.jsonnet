@@ -10,17 +10,20 @@ orgs.newOrg('eclipse-csi') {
     },
   },
   _repositories+:: [
+    orgs.newRepo('gradually') {
+      description: "This repository contains SDLC Security Levels for Eclipse Foundation Projects",
+    },
     orgs.newRepo('otterdog') {
+      dependabot_security_updates_enabled: true,
       description: "OtterDog is a tool to manage GitHub organizations at scale using a configuration as code approach. It is actively used by the Eclipse Foundation to manage its numerous projects hosted on GitHub.",
-      dependabot_security_updates_enabled: true,     
       homepage: "otterdog.readthedocs.org",
-      topics: [
-         "security",
-         "supply-chain",
-         "configuration-as-code",
-         "github-config",
-         "python",
-         "asyncio",
+      topics+: [
+        "asyncio",
+        "configuration-as-code",
+        "github-config",
+        "python",
+        "security",
+        "supply-chain"
       ],
       webhooks: [
         orgs.newRepoWebhook('https://readthedocs.org/api/v2/webhook/otterdog/260699/') {
@@ -34,12 +37,14 @@ orgs.newOrg('eclipse-csi') {
           secret: "pass:bots/technology.csi/readthedocs.org/otterdog-webhook-secret",
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('PYPI_TOKEN') {
+          value: "********",
+        },
+      ],
     },
     orgs.newRepo('security-handbook') {
       description: "This repository contains the source for the Eclipse Foundation Security Handbook.",
-    },
-    orgs.newRepo('gradually') {
-      description: "This repository contains SDLC Security Levels for Eclipse Foundation Projects",
     },
   ],
 }
