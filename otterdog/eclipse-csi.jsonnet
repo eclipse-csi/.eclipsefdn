@@ -10,6 +10,9 @@ orgs.newOrg('eclipse-csi') {
     },
   },
   _repositories+:: [
+    orgs.newRepo('.github') {
+      has_discussions: true
+    },
     orgs.newRepo('gradually') {
       description: "This repository contains SDLC Security Levels for Eclipse Foundation Projects",
     },
