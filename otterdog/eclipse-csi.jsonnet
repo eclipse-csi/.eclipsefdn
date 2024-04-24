@@ -47,11 +47,6 @@ orgs.newOrg('eclipse-csi') {
           secret: "pass:bots/technology.csi/readthedocs.org/otterdog-webhook-secret",
         },
       ],
-      secrets: [
-        orgs.newRepoSecret('PYPI_TOKEN') {
-          value: "********",
-        },
-      ],
       environments: [
         orgs.newEnvironment('pypi'),
       ],
