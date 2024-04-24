@@ -21,6 +21,11 @@ orgs.newOrg('eclipse-csi') {
     orgs.newRepo('sonatype-lifecycle') {
       description: "Configuration files and guides for deployment and usage of Sonatype Lifecycle at the Eclipse Foundation",
     },
+    orgs.newRepo('octopin') {
+      dependabot_security_updates_enabled: true,
+      description: "Analyses and pins GitHub actions in your workflows.",
+      has_projects: false,
+    },
     orgs.newRepo('otterdog') {
       dependabot_security_updates_enabled: true,
       description: "OtterDog is a tool to manage GitHub organizations at scale using a configuration as code approach. It is actively used by the Eclipse Foundation to manage its numerous projects hosted on GitHub.",
