@@ -2,7 +2,7 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('eclipse-csi') {
   settings+: {
-    description: "The Eclipse CSI project",
+    description: "The Eclipse CSI project, lets change that",
     name: "Eclipse Common Security Infrastructure",
     web_commit_signoff_required: false,
     has_discussions: true,
