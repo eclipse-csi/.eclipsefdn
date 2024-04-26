@@ -1,6 +1,5 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-
 orgs.newOrg('eclipse-csi') {
   settings+: {
     description: "The Eclipse CSI project",
