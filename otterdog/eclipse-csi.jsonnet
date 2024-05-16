@@ -40,6 +40,11 @@ orgs.newOrg('eclipse-csi') {
         "security",
         "supply-chain"
       ],
+      secrets+: [
+        orgs.newRepoSecret('IQ_TOKEN') {
+          value: "pass:bots/technology.csi/sonatype-lifecycle/iq-token",
+        },
+      ],
       webhooks: [
         orgs.newRepoWebhook('https://readthedocs.org/api/v2/webhook/otterdog/260699/') {
           content_type: "json",
