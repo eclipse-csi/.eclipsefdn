@@ -44,6 +44,9 @@ orgs.newOrg('eclipse-csi') {
         orgs.newRepoSecret('IQ_TOKEN') {
           value: "pass:bots/technology.csi/sonatype-lifecycle/iq-token",
         },
+        orgs.newRepoSecret('PYPI_TOKEN') {
+          value: "pass:bots/technology.csi/pypi.org/api-token",
+        },
       ],
       webhooks: [
         orgs.newRepoWebhook('https://readthedocs.org/api/v2/webhook/otterdog/260699/') {
