@@ -3,23 +3,20 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 orgs.newOrg('eclipse-csi') {
   settings+: {
     description: "The Eclipse CSI project",
+    discussion_source_repository: "eclipse-csi/.github",
+    has_discussions: true,
     name: "Eclipse Common Security Infrastructure",
     web_commit_signoff_required: false,
-    has_discussions: true,
-    discussion_source_repository: 'eclipse-csi/.github',
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
     },
   },
   _repositories+:: [
     orgs.newRepo('.github') {
-      has_discussions: true
+      has_discussions: true,
     },
     orgs.newRepo('gradually') {
       description: "This repository contains SDLC Security Levels for Eclipse Foundation Projects",
-    },
-    orgs.newRepo('sonatype-lifecycle') {
-      description: "Configuration files and guides for deployment and usage of Sonatype Lifecycle at the Eclipse Foundation",
     },
     orgs.newRepo('octopin') {
       dependabot_security_updates_enabled: true,
@@ -40,11 +37,6 @@ orgs.newOrg('eclipse-csi') {
         "security",
         "supply-chain"
       ],
-      secrets+: [
-        orgs.newRepoSecret('IQ_TOKEN') {
-          value: "pass:bots/technology.csi/sonatype-lifecycle/iq-token",
-        },
-      ],
       webhooks: [
         orgs.newRepoWebhook('https://readthedocs.org/api/v2/webhook/otterdog/260699/') {
           content_type: "json",
@@ -57,6 +49,11 @@ orgs.newOrg('eclipse-csi') {
           secret: "pass:bots/technology.csi/readthedocs.org/otterdog-webhook-secret",
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('IQ_TOKEN') {
+          value: "pass:bots/technology.csi/sonatype-lifecycle/iq-token",
+        },
+      ],
       environments: [
         orgs.newEnvironment('pypi'),
       ],
@@ -65,6 +62,17 @@ orgs.newOrg('eclipse-csi') {
       description: "This repository contains the source for the Eclipse Foundation Security Handbook.",
       gh_pages_build_type: "workflow",
       homepage: "https://eclipse-csi.github.io/security-handbook/",
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+    },
+    orgs.newRepo('sonatype-lifecycle') {
+      description: "Configuration files and guides for deployment and usage of Sonatype Lifecycle at the Eclipse Foundation",
     },
   ],
 }
