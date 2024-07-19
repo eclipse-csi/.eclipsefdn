@@ -63,6 +63,8 @@ orgs.newOrg('eclipse-csi') {
     },
     orgs.newRepo('security-handbook') {
       description: "This repository contains the source for the Eclipse Foundation Security Handbook.",
+      gh_pages_build_type: "workflow",
+      homepage: "https://eclipse-csi.github.io/security-handbook/",
     },
   ],
 }
