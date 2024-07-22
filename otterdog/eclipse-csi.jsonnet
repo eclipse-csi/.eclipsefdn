@@ -72,7 +72,7 @@ orgs.newOrg('eclipse-csi') {
       ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approval_count: 0,
+          required_approving_review_count: 0,
         },
       ],
     },
