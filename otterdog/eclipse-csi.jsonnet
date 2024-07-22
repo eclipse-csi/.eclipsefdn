@@ -70,6 +70,11 @@ orgs.newOrg('eclipse-csi') {
           deployment_branch_policy: "selected",
         },
       ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 0,
+        },
+      ],
     },
     orgs.newRepo('sonatype-lifecycle') {
       description: "Configuration files and guides for deployment and usage of Sonatype Lifecycle at the Eclipse Foundation",
