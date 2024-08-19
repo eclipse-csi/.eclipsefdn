@@ -11,6 +11,15 @@ orgs.newOrg('eclipse-csi') {
       actions_can_approve_pull_request_reviews: false,
     },
   },
+  secrets+: [
+    orgs.newOrgSecret('DEPENDENCY_TRACK_API_KEY') {
+      selected_repositories+: [
+        "otterdog"
+      ],
+      value: "********",
+      visibility: "selected",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('.github') {
       has_discussions: true,
@@ -62,17 +71,17 @@ orgs.newOrg('eclipse-csi') {
       description: "This repository contains the source for the Eclipse Foundation Security Handbook.",
       gh_pages_build_type: "workflow",
       homepage: "https://eclipse-csi.github.io/security-handbook/",
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 0,
+        },
+      ],
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
             "main"
           ],
           deployment_branch_policy: "selected",
-        },
-      ],
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 0,
         },
       ],
     },
