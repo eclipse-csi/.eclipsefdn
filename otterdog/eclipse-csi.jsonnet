@@ -18,6 +18,7 @@ local customRuleset(name) =
       "analyze"
     ],
     requires_commit_signatures: false,
+    requires_linear_history: true,
     requires_last_push_approval: true,
     requires_review_thread_resolution: true,
   };
