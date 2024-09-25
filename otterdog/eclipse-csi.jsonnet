@@ -1,5 +1,27 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
+local customRuleset(name) = 
+  orgs.newRepoRuleset(name) {
+    allows_updates: true,
+    bypass_actors+: [
+      "@eclipse-csi/technology-csi-project-leads"
+    ],
+    include_refs+: [
+      std.format("refs/heads/%s", name),
+    ],
+    requires_pull_request: true,
+    required_approving_review_count: 1,
+    required_status_checks+: [
+      "test (3.10)",
+      "test (3.11)",
+      "test (3.12)",
+      "analyze"
+    ],
+    requires_commit_signatures: false,
+    requires_last_push_approval: true,
+    requires_review_thread_resolution: true,
+  };
+
 orgs.newOrg('eclipse-csi') {
   settings+: {
     description: "The Eclipse CSI project",
@@ -33,11 +55,14 @@ orgs.newOrg('eclipse-csi') {
       has_projects: false,
     },
     orgs.newRepo('otterdog') {
+      code_scanning_default_setup_enabled: true,
+      code_scanning_default_languages: ["python"],
       dependabot_security_updates_enabled: true,
       description: "OtterDog is a tool to manage GitHub organizations at scale using a configuration as code approach. It is actively used by the Eclipse Foundation to manage its numerous projects hosted on GitHub.",
       has_discussions: true,
       has_projects: false,
       homepage: "https://otterdog.readthedocs.org",
+      private_vulnerability_reporting_enabled: true,
       topics+: [
         "asyncio",
         "configuration-as-code",
@@ -65,6 +90,9 @@ orgs.newOrg('eclipse-csi') {
       ],
       environments: [
         orgs.newEnvironment('pypi'),
+      ],
+      rulesets: [
+        customRuleset("main"),
       ],
     },
     orgs.newRepo('security-handbook') {
