@@ -11,12 +11,6 @@ local customRuleset(name) =
     ],
     requires_pull_request: true,
     required_approving_review_count: 1,
-    required_status_checks+: [
-      "test (3.10)",
-      "test (3.11)",
-      "test (3.12)",
-      "analyze"
-    ],
     requires_commit_signatures: false,
     requires_linear_history: true,
     requires_last_push_approval: true,
@@ -93,7 +87,14 @@ orgs.newOrg('eclipse-csi') {
         orgs.newEnvironment('pypi'),
       ],
       rulesets: [
-        customRuleset("main"),
+        customRuleset("main") {
+          required_status_checks+: [
+            "test (3.10)",
+            "test (3.11)",
+            "test (3.12)",
+            "analyze"
+          ],
+        },
       ],
     },
     orgs.newRepo('security-handbook') {
