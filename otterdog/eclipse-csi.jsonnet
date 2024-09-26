@@ -2,19 +2,19 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 local customRuleset(name) = 
   orgs.newRepoRuleset(name) {
-    allows_updates: true,
     bypass_actors+: [
       "@eclipse-csi/technology-csi-project-leads"
     ],
     include_refs+: [
       std.format("refs/heads/%s", name),
     ],
-    requires_pull_request: true,
-    required_approving_review_count: 1,
-    requires_commit_signatures: false,
+    required_pull_request+: {
+      required_approving_review_count: 1,
+      requires_last_push_approval: true,
+      requires_review_thread_resolution: true,
+      dismisses_stale_reviews: true,
+    },
     requires_linear_history: true,
-    requires_last_push_approval: true,
-    requires_review_thread_resolution: true,
   };
 
 orgs.newOrg('eclipse-csi') {
