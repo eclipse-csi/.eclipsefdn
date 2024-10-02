@@ -118,5 +118,11 @@ orgs.newOrg('eclipse-csi') {
     orgs.newRepo('sonatype-lifecycle') {
       description: "Configuration files and guides for deployment and usage of Sonatype Lifecycle at the Eclipse Foundation",
     },
+    orgs.newRepo('workflows') {
+      dependabot_security_updates_enabled: true,
+      description: "Collection of reusable workflows.",
+      has_projects: false,
+      has_wiki: false,
+    },
   ],
 }
