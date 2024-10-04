@@ -120,6 +120,15 @@ orgs.newOrg('eclipse-csi') {
           deployment_branch_policy: "selected",
         },
       ],
+      rulesets: [
+        orgs.newRepoRuleset('main') {
+          include_refs+: [
+            "refs/heads/main",
+          ],
+          required_pull_request: null,
+          requires_status_checks: false,
+        },
+      ],
     },
     orgs.newRepo('sonatype-lifecycle') {
       description: "Configuration files and guides for deployment and usage of Sonatype Lifecycle at the Eclipse Foundation",
