@@ -48,6 +48,12 @@ orgs.newOrg('eclipse-csi') {
       dependabot_security_updates_enabled: true,
       description: "Analyses and pins GitHub actions in your workflows.",
       has_projects: false,
+      topics+: [
+        "github-actions",
+        "python",
+        "security",
+        "supply-chain"
+      ],
     },
     orgs.newRepo('otterdog') {
       code_scanning_default_setup_enabled: true,
