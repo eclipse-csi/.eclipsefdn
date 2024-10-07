@@ -94,12 +94,14 @@ orgs.newOrg('eclipse-csi') {
       ],
       rulesets: [
         customRuleset("main") {
-          required_status_checks+: [
-            "test (3.10)",
-            "test (3.11)",
-            "test (3.12)",
-            "analyze"
-          ],
+          required_status_checks+: {
+            status_checks+: [
+              "test (3.10)",
+              "test (3.11)",
+              "test (3.12)",
+              "analyze"
+            ],
+          },
         },
       ],
     },
@@ -126,7 +128,7 @@ orgs.newOrg('eclipse-csi') {
             "refs/heads/main",
           ],
           required_pull_request: null,
-          requires_status_checks: false,
+          required_status_checks: null,
         },
       ],
     },
