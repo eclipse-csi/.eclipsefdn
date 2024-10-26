@@ -17,6 +17,18 @@ local customRuleset(name) =
     requires_linear_history: true,
   };
 
+local protectTags() = orgs.newRepoRuleset('tags-protection') {
+  target: "tag",
+  include_refs: [
+    '~ALL'
+  ],
+  allows_creations: true,
+  allows_deletions: false,	
+  allows_updates: false,
+  required_pull_request: null,
+  required_status_checks: null,
+};
+
 orgs.newOrg('eclipse-csi') {
   settings+: {
     description: "The Eclipse CSI project",
@@ -103,6 +115,7 @@ orgs.newOrg('eclipse-csi') {
             ],
           },
         },
+        protectTags(),
       ],
     },
     orgs.newRepo('security-handbook') {
