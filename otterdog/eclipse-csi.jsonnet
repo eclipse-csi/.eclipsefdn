@@ -36,9 +36,6 @@ orgs.newOrg('eclipse-csi') {
     has_discussions: true,
     name: "Eclipse Common Security Infrastructure",
     web_commit_signoff_required: false,
-    workflows+: {
-      actions_can_approve_pull_request_reviews: false,
-    },
   },
   secrets+: [
     orgs.newOrgSecret('DEPENDENCY_TRACK_API_KEY') {
