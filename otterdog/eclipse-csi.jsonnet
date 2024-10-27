@@ -103,6 +103,9 @@ orgs.newOrg('eclipse-csi') {
       ],
       rulesets: [
         customRuleset("main") {
+          required_pull_request+: {
+            requires_code_owner_review: true,
+          },
           required_status_checks+: {
             status_checks+: [
               "test (3.10)",
