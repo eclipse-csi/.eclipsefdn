@@ -100,6 +100,7 @@ orgs.newOrg('eclipse-csi') {
       ],
       environments: [
         orgs.newEnvironment('pypi'),
+        orgs.newEnvironment('test-pypi'),
       ],
       rulesets: [
         customRuleset("main") {
