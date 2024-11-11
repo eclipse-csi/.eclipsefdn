@@ -1,5 +1,8 @@
 id: default-security-policy
 name: Adds a default SECURITY.md file
+description: |-
+  This blueprint will create a PR that will add a default SECURITY.md file to the `.github` repo of your GitHub organization if it does not yet exist.
+  You can adjust the PR as needed to fit it to your needs. If a repo defines a more specific SECURITY.md file it will take precedence of the one present in the `.github` repo.
 type: required_file
 config:
   repo_selector:
