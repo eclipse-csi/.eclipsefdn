@@ -1,10 +1,11 @@
-name: Requires SECURITY.md file
+id: default-security-policy
+name: Adds a default SECURITY.md file
 type: required_file
 config:
+  repo_selector:
+    name_pattern: .github
   files:
     - path: SECURITY.md
-      repo_selector:
-        name_pattern: .github
       content: |
         # Security Policy
         This Eclipse Foundation Project adheres to the [Eclipse Foundation Vulnerability Reporting Policy](https://www.eclipse.org/security/policy/).
@@ -13,7 +14,7 @@ config:
         
         If you think you have found a vulnerability in this repository, please report it to us through coordinated disclosure.
         
-        **Please do not report security vulnerabilities through public issues, discussions, or change requests.**
+        **Please do not report security vulnerabilities through public issues, discussions, or pull requests.**
         
         Instead, report it using one of the following ways:
 
@@ -23,7 +24,7 @@ config:
         You can find more information about reporting and disclosure at the [Eclipse Foundation Security page](https://www.eclipse.org/security/).
 
         Please include as much of the information listed below as you can to help us better understand and resolve the issue:
-        
+       
         * The type of issue (e.g., buffer overflow, SQL injection, or cross-site scripting)
         * Affected version(s)
         * Impact of the issue, including how an attacker might exploit the issue
