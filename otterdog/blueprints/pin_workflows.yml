@@ -1,0 +1,7 @@
+id: pin-workflows
+name: Pins GitHub actions and reusable workflows in workflow files
+description: |-
+  This blueprint type will pin any encountered GitHub action or reusable workflow in any used workflow of matching repositories 
+  to the commit hash of the latest released version that corresponds to the currently used reference.
+type: pin_workflow
+config:
