@@ -14,7 +14,7 @@ config:
                 
         The Eclipse Foundation has a code of conduct that all projects must adhere to. the standard code of conduct that all Eclipse projects must adhere are defined in the following documents: 
         
-        - [Eclipse Code of Conduct](https://raw.githubusercontent.com/eclipse/.github/master/CODE_OF_CONDUCT.md)
+        - [Eclipse Code of Conduct](https://www.eclipse.org/org/documents/Community_Code_of_Conduct.php)
         - [Eclipse Foundation Handbook](https://www.eclipse.org/projects/handbook/)
         - [Eclipse Committer Due Diligence Guidelines](https://www.eclipse.org/legal/committerguidelines.php)
         
