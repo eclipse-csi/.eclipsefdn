@@ -14,6 +14,9 @@ local customRuleset(name) =
       requires_review_thread_resolution: true,
       dismisses_stale_reviews: true,
     },
+    required_status_checks+: {
+      strict: true,
+    },
     requires_linear_history: true,
   };
 
