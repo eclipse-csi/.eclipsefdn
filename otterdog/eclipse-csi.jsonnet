@@ -66,6 +66,10 @@ orgs.newOrg('eclipse-csi') {
         "security",
         "supply-chain"
       ],
+      environments: [
+        orgs.newEnvironment('pypi'),
+        orgs.newEnvironment('test-pypi'),
+      ],      
     },
     orgs.newRepo('otterdog') {
       code_scanning_default_setup_enabled: true,
