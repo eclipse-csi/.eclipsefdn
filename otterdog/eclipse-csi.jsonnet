@@ -66,6 +66,18 @@ orgs.newOrg('eclipse-csi') {
         "security",
         "supply-chain"
       ],
+      webhooks: [
+        orgs.newRepoWebhook('https://readthedocs.org/api/v2/webhook/octopin/285155/') {
+          content_type: "json",
+          events+: [
+            "create",
+            "delete",
+            "pull_request",
+            "push"
+          ],
+          secret: "pass:bots/technology.csi/readthedocs.org/octopin-webhook-secret",
+        },
+      ],
     },
     orgs.newRepo('otterdog') {
       code_scanning_default_setup_enabled: true,
