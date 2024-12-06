@@ -78,6 +78,10 @@ orgs.newOrg('eclipse-csi') {
           secret: "pass:bots/technology.csi/readthedocs.org/octopin-webhook-secret",
         },
       ],
+      environments: [
+        orgs.newEnvironment('pypi'),
+        orgs.newEnvironment('test-pypi'),
+      ],      
     },
     orgs.newRepo('otterdog') {
       code_scanning_default_setup_enabled: true,
