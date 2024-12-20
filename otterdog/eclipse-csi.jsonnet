@@ -32,7 +32,7 @@ local protectTags() = orgs.newRepoRuleset('tags-protection') {
   required_status_checks: null,
 };
 
-orgs.newOrg('eclipse-csi') {
+orgs.newOrg('technology.csi', 'eclipse-csi') {
   settings+: {
     description: "The Eclipse CSI project",
     discussion_source_repository: "eclipse-csi/.github",
