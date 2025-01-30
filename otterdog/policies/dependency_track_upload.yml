@@ -4,5 +4,4 @@ description: |-
 type: dependency_track_upload
 config:
   artifact_name: "eclipse-sbom-data"
-  base_url: "https://sbom.eclipse.org"
   workflow_filter: "eclipse-csi/workflows/.github/workflows/store-sbom-data.yml.*"
