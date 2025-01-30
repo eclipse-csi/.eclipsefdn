@@ -1,6 +1,6 @@
-name: Upload sbom data to 'https://sbom.eclipse.org'
+name: Upload sbom data to https://sbom.eclipse.org
 description: |-
-  This policy uploads generated sbom data to 'http://sbom.eclipse.org'.
+  This policy uploads generated sbom data to https://sbom.eclipse.org.
 type: dependency_track_upload
 config:
   artifact_name: "eclipse-sbom-data"
