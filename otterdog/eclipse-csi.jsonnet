@@ -40,15 +40,6 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
     name: "Eclipse Common Security Infrastructure",
     web_commit_signoff_required: false,
   },
-  secrets+: [
-    orgs.newOrgSecret('DEPENDENCY_TRACK_API_KEY') {
-      selected_repositories+: [
-        "otterdog"
-      ],
-      value: "********",
-      visibility: "selected",
-    },
-  ],
   _repositories+:: [
     orgs.newRepo('.github') {
       has_discussions: true,
@@ -110,11 +101,6 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
             "push"
           ],
           secret: "pass:bots/technology.csi/readthedocs.org/otterdog-webhook-secret",
-        },
-      ],
-      secrets: [
-        orgs.newRepoSecret('IQ_TOKEN') {
-          value: "pass:bots/technology.csi/sonatype-lifecycle/iq-token",
         },
       ],
       environments: [
