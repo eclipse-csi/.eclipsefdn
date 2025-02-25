@@ -150,6 +150,10 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
         },
       ],
     },
+    orgs.newRepo('dependency-track') {
+      description: "Configuration files and guides for deployment and usage of Dependency Track at the Eclipse Foundation",
+      homepage: "https://sbom.eclipse.org",
+    },
     orgs.newRepo('sonatype-lifecycle') {
       description: "Configuration files and guides for deployment and usage of Sonatype Lifecycle at the Eclipse Foundation",
     },
