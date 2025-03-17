@@ -2,9 +2,6 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 local customRuleset(name) = 
   orgs.newRepoRuleset(name) {
-    bypass_actors+: [
-      "@eclipse-csi/technology-csi-project-leads"
-    ],
     include_refs+: [
       std.format("refs/heads/%s", name),
     ],
