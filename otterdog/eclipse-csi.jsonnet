@@ -11,9 +11,6 @@ local customRuleset(name) =
       requires_review_thread_resolution: true,
       dismisses_stale_reviews: true,
     },
-    required_status_checks+: {
-      strict: true,
-    },
     requires_linear_history: true,
   };
 
@@ -106,9 +103,6 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
       ],
       rulesets: [
         customRuleset("main") {
-          required_pull_request+: {
-            requires_code_owner_review: true,
-          },
           required_status_checks+: {
             status_checks+: [
               "test (3.11)",
