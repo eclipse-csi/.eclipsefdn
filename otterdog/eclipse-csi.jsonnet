@@ -70,7 +70,10 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
     },
     orgs.newRepo('otterdog') {
       code_scanning_default_setup_enabled: true,
-      code_scanning_default_languages: ["python"],
+      code_scanning_default_languages: [
+        "actions",
+        "python",
+      ],
       dependabot_security_updates_enabled: true,
       description: "OtterDog is a tool to manage GitHub organizations at scale using a configuration as code approach. It is actively used by the Eclipse Foundation to manage its numerous projects hosted on GitHub.",
       has_discussions: true,
