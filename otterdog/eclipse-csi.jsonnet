@@ -157,6 +157,8 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
     orgs.newRepo('helm-charts') {
       description: "This repository contains the helm-charts source from Eclipse Foundation Security Infrastructure projects.",
       gh_pages_build_type: "workflow",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",      
       homepage: "https://eclipse-csi.github.io/helm-charts/",
       environments: [
         orgs.newEnvironment('github-pages') {
