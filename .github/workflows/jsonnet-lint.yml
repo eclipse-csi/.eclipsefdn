@@ -1,0 +1,34 @@
+name: Jsonnet Lint
+
+on:
+  pull_request:
+    paths:
+      - 'otterdog/eclipse-csi.jsonnet'
+      - '.github/workflows/jsonnet-lint.yml'
+
+env:
+  JSONNET_FILE: otterdog/eclipse-csi.jsonnet
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+      - name: Install
+        run: |
+          go install github.com/google/go-jsonnet/cmd/jsonnetfmt@latest
+          echo "$HOME/go/bin" >> $GITHUB_PATH
+
+      - name: Check format
+        run: |
+          if ! jsonnetfmt --test ${{ env.JSONNET_FILE }}; then
+
+            # Show issues
+            jsonnetfmt -i ${{ env.JSONNET_FILE }} && git diff
+
+            # Show resolution
+            echo "Please run 'jsonnetfmt -i ${{ env.JSONNET_FILE }}' locally!"
+
+            exit 1
+          fi
