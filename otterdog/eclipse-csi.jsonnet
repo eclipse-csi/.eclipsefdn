@@ -68,6 +68,26 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
         orgs.newEnvironment('test-pypi'),
       ],      
     },
+    orgs.newRepo('pia') {
+      code_scanning_default_setup_enabled: true,
+      code_scanning_default_languages: [
+        "actions",
+        "python",
+      ],
+      dependabot_security_updates_enabled: true,
+      description: "Project Identity Authority (PIA) authenticates Eclipse Foundation projects using OpenID Connect (OIDC).",
+      has_discussions: true,
+      private_vulnerability_reporting_enabled: true,
+      topics+: [
+        "python",
+        "security",
+        "supply-chain",
+        "oidc"
+      ],
+      rulesets: [
+        customRuleset("main")
+      ],
+    },
     orgs.newRepo('otterdog') {
       code_scanning_default_setup_enabled: true,
       code_scanning_default_languages: [
