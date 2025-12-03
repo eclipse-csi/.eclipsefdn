@@ -85,7 +85,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
         "oidc"
       ],
       rulesets: [
-        customRuleset("main") {
+        customRuleset("main")
       ],
     },
     orgs.newRepo('otterdog') {
