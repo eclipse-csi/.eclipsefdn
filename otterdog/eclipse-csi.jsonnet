@@ -133,6 +133,20 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
         protectTags(),
       ],
     },
+    orgs.newRepo('rsrr') {
+      code_scanning_default_setup_enabled: true,
+      dependabot_security_updates_enabled: true,
+      description: 'Rapid Security Review Runner. A CLI to run automated checks for Eclipse Foundation Rapid Security Reviews.',
+      has_discussions: true,
+      private_vulnerability_reporting_enabled: true,
+      topics+: [
+        'python',
+        'security',
+      ],
+      rulesets: [
+        customRuleset('main'),
+      ],
+    },
     orgs.newRepo('security-handbook') {
       description: 'This repository contains the source for the Eclipse Foundation Security Handbook.',
       gh_pages_build_type: 'workflow',
