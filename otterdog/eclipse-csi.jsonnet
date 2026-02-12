@@ -42,6 +42,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
       description: 'This repository contains SDLC Security Levels for Eclipse Foundation Projects',
     },
     orgs.newRepo('octopin') {
+      archived: true,
       dependabot_security_updates_enabled: true,
       description: 'Analyses and pins GitHub actions in your workflows.',
       has_projects: false,
