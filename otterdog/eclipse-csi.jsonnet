@@ -204,8 +204,8 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
         },
       ],
     },
-    orgs.newRepo('signpath-maven-plugin') {
-      description: 'Maven plugin that signs artifacts via the SignPath REST API',
+    orgs.newRepo('codesign-tools') {
+      description: 'Tools for signing artifacts via the SignPath REST API',
     },
   ],
 }
