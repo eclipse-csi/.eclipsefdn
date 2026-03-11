@@ -34,6 +34,23 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
     name: 'Eclipse Common Security Infrastructure',
     web_commit_signoff_required: false,
   },
+  secrets+: [
+    orgs.newOrgSecret('GPG_KEY_ID') {
+      value: 'pass:bots/technology.csi/gpg/key_id',
+    },
+    orgs.newOrgSecret('GPG_PASSPHRASE') {
+      value: 'pass:bots/technology.csi/gpg/passphrase',
+    },
+    orgs.newOrgSecret('GPG_PRIVATE_KEY') {
+      value: 'pass:bots/technology.csi/gpg/secret-subkeys.asc',
+    },
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_PASSWORD') {
+      value: 'pass:bots/technology.csi/central.sonatype.org/token-password',
+    },
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_USERNAME') {
+      value: 'pass:bots/technology.csi/central.sonatype.org/token-username',
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('.github') {
       has_discussions: true,
