@@ -223,6 +223,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
     },
     orgs.newRepo('codesign-tools') {
       description: 'Tools for signing artifacts via the SignPath REST API',
+      gh_pages_build_type: 'workflow',
     },
   ],
 }
