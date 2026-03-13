@@ -44,6 +44,9 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
     orgs.newOrgSecret('GPG_PRIVATE_KEY') {
       value: 'pass:bots/technology.csi/gpg/secret-subkeys.asc',
     },
+    orgs.newOrgSecret('GPG_PUBLIC_KEY') {
+      value: 'pass:bots/technology.csi/gpg/public-keys.asc',
+    },
     orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_PASSWORD') {
       value: 'pass:bots/technology.csi/central.sonatype.org/token-password',
     },
@@ -224,6 +227,18 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
     orgs.newRepo('codesign-tools') {
       description: 'Tools for signing artifacts via the SignPath REST API',
       gh_pages_build_type: 'workflow',
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+      rulesets: [
+        customRuleset('main'),
+        protectTags(),
+      ]
     },
   ],
 }
