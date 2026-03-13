@@ -236,7 +236,15 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
         },
       ],
       rulesets: [
-        customRuleset('main'),
+        orgs.newRepoRuleset('default_branch') {
+          include_refs+: [
+            "~DEFAULT_BRANCH",
+          ],
+          required_pull_request: null,
+          required_status_checks+: {
+            status_checks: [],
+          },
+        },
         protectTags(),
       ]
     },
