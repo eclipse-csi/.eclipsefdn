@@ -226,14 +226,17 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
     },
     orgs.newRepo('codesign-tools') {
       description: 'Tools for signing artifacts via the SignPath REST API',
+      homepage: 'https://eclipse-csi.github.io/codesign-tools/',
       gh_pages_build_type: 'workflow',
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
-            "main"
+            "main",
+            "tag:v*",
           ],
           deployment_branch_policy: "selected",
         },
+        orgs.newEnvironment('release'),
       ],
       rulesets: [
         orgs.newRepoRuleset('default_branch') {
