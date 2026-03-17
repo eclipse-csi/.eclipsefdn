@@ -144,6 +144,9 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
       ],
       rulesets: [
         customRuleset('main') {
+          bypass_actors+: [
+            "@eclipse-csi/technology-csi-project-leads"
+          ],
           required_status_checks+: {
             status_checks+: [
               'test (3.11)',
