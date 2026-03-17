@@ -144,6 +144,9 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
       ],
       rulesets: [
         customRuleset('main') {
+          bypass_actors+: [
+            '@eclipse-csi/technology-csi-project-leads',
+          ],
           required_status_checks+: {
             status_checks+: [
               'test (3.11)',
@@ -231,17 +234,17 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
-            "main",
-            "tag:v*",
+            'main',
+            'tag:v*',
           ],
-          deployment_branch_policy: "selected",
+          deployment_branch_policy: 'selected',
         },
         orgs.newEnvironment('release'),
       ],
       rulesets: [
         orgs.newRepoRuleset('default_branch') {
           include_refs+: [
-            "~DEFAULT_BRANCH",
+            '~DEFAULT_BRANCH',
           ],
           required_pull_request: null,
           required_status_checks+: {
@@ -249,7 +252,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
           },
         },
         protectTags(),
-      ]
+      ],
     },
   ],
 }
