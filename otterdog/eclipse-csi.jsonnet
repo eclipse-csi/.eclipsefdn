@@ -254,5 +254,11 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
         protectTags(),
       ],
     },
+    orgs.newRepo('skills') {
+      description: 'Eclipse CSI Agentic AI Skills',
+      topics+: [
+        'agent-skills',
+      ],
+    },
   ],
 }
