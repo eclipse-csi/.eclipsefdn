@@ -226,6 +226,11 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
           deployment_branch_policy: 'selected',
         },
       ],
+      secrets+: [
+        orgs.newRepoSecret('DEPENDABOT_HELM_BUMP_TOKEN') {
+          value: 'pass:bots/technology.cbi/github.com/dependabot-helm-bump-token',
+        },
+      ],
     },
     orgs.newRepo('codesign-tools') {
       description: 'Tools for signing artifacts via the SignPath REST API',
