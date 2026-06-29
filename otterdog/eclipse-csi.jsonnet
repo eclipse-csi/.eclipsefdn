@@ -265,5 +265,12 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
         'agent-skills',
       ],
     },
+    orgs.newRepo('advisoryhub') {
+      description: 'Eclipse CSI AdvisoryHub Application',
+      topics+: [
+        'advisory',
+        'vdp',
+      ],
+    },
   ],
 }
