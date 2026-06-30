@@ -268,7 +268,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
     orgs.newRepo('advisoryhub') {
       description: 'Eclipse CSI AdvisoryHub Application',
       gh_pages_build_type: 'workflow',
-      homepage: 'https://eclipse-csi.github.io/advisoryhub/',
+      homepage: 'https://eclipse-csi.github.io/advisoryhub/dev/',
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
