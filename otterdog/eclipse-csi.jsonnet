@@ -53,6 +53,12 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
     orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_USERNAME') {
       value: 'pass:bots/technology.csi/central.sonatype.org/token-username',
     },
+    orgs.newOrgSecret('DOCKER_HUB_USERNAME') {
+      value: 'pass:bots/technology.csi/docker.com/username',
+    },
+    orgs.newOrgSecret('DOCKER_HUB_TOKEN') {
+      value: 'pass:bots/technology.csi/docker.com/api-token-hd7631',
+    },
   ],
   _repositories+:: [
     orgs.newRepo('.github') {
