@@ -151,7 +151,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
       rulesets: [
         customRuleset('main') {
           bypass_actors+: [
-            '@eclipse-csi/technology-csi-project-leads',
+            '@eclipse-csi/technology-csi-committers',
           ],
           required_status_checks+: {
             status_checks+: [
@@ -237,6 +237,14 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
         orgs.newRepoSecret('DEPENDABOT_HELM_BUMP_TOKEN') {
           value: 'pass:bots/technology.cbi/github.com/dependabot-helm-bump-token',
         },
+      ],
+      rulesets: [
+        customRuleset('main') {
+          bypass_actors+: [
+            '@eclipse-csi/technology-csi-committers',
+          ],
+        },
+        protectTags(),
       ],
     },
     orgs.newRepo('codesign-tools') {
