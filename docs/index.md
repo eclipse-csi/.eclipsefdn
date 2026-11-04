@@ -6,7 +6,7 @@ hide:
 
 # Self-service of GitHub resources
 
-General documentation for using the self-service (stored in directory *otterdog*) can be accessed at [otterdog.readthedocs.io](https://otterdog.readthedocs.io).
+General documentation for using the self-service (stored in directory *otterdog*) can be accessed at [csi.eclipse.dev/otterdog](https://csi.eclipse.dev/otterdog/).
 
 ## Current configuration
 
