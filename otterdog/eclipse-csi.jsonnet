@@ -138,7 +138,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
       gh_pages_build_type: 'workflow',
       has_discussions: true,
       has_projects: true,
-      homepage: 'https://otterdog.readthedocs.org',
+      homepage: 'https://csi.eclipse.dev/otterdog/',
       private_vulnerability_reporting_enabled: true,
       topics+: [
         'asyncio',
