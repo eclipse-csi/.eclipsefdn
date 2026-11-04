@@ -167,12 +167,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
           ],
           deployment_branch_policy: 'selected',
         },
-        orgs.newEnvironment('pull-request-preview') {
-          branch_policies+: [
-            'main',
-          ],
-          deployment_branch_policy: 'selected',
-        },
+        orgs.newEnvironment('pull-request-preview'),
         orgs.newEnvironment('pypi'),
         orgs.newEnvironment('test-pypi'),
       ],
