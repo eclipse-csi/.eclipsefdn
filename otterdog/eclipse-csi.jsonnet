@@ -135,6 +135,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
       ],
       dependabot_security_updates_enabled: true,
       description: 'OtterDog is a tool to manage GitHub organizations at scale using a configuration as code approach. It is actively used by the Eclipse Foundation to manage its numerous projects hosted on GitHub.',
+      gh_pages_build_type: 'workflow',
       has_discussions: true,
       has_projects: true,
       homepage: 'https://otterdog.readthedocs.org',
@@ -160,8 +161,25 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
         },
       ],
       environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            'main',
+          ],
+          deployment_branch_policy: 'selected',
+        },
+        orgs.newEnvironment('pull-request-preview') {
+          branch_policies+: [
+            'main',
+          ],
+          deployment_branch_policy: 'selected',
+        },
         orgs.newEnvironment('pypi'),
         orgs.newEnvironment('test-pypi'),
+      ],
+      secrets+: [
+        orgs.newRepoSecret('GH_PREVIEW_TOKEN') {
+          value: 'pass:bots/technology.csi/github.com/otterdog-website-preview-token',
+        },
       ],
       rulesets: [
         customRuleset('main') {
@@ -177,6 +195,21 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
           },
         },
         protectTags(),
+      ],
+    },
+    orgs.newRepo('otterdog-website-preview') {
+      description: 'Previews of the documentation of the pull requests of eclipse-csi/otterdog',
+      gh_pages_build_type: 'legacy',
+      gh_pages_source_branch: 'gh-pages-preview',
+      gh_pages_source_path: '/',
+      homepage: 'https://eclipse-csi.github.io/otterdog-website-preview/',
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            'gh-pages-preview',
+          ],
+          deployment_branch_policy: 'selected',
+        },
       ],
     },
     orgs.newRepo('rsrr') {
