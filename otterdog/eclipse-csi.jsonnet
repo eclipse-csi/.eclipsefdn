@@ -124,7 +124,12 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
         'oidc',
       ],
       rulesets: [
-        customRuleset('main'),
+        customRuleset('main'){
+          bypass_actors+: [
+            '@eclipse-csi/technology-csi-committers',
+          ],
+        },
+        protectTags(),
       ],
     },
     orgs.newRepo('otterdog') {
