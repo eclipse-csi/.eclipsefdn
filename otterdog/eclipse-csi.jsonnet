@@ -188,10 +188,13 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
           ],
           required_status_checks+: {
             status_checks+: [
-              'test (3.11)',
-              'test (3.12)',
+              'test (3.14)',
               'analyze',
             ],
+          },
+          copilot_code_review: orgs.newCopilotCodeReview() {
+            review_draft_pull_requests: true,
+            review_on_push: true,
           },
         },
         protectTags(),
