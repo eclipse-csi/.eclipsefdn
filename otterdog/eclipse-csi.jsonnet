@@ -205,7 +205,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
       gh_pages_build_type: 'legacy',
       gh_pages_source_branch: 'gh-pages-preview',
       gh_pages_source_path: '/',
-      homepage: 'https://eclipse-csi.github.io/otterdog-website-preview/',
+      homepage: 'https://csi.eclipse.dev/otterdog-website-preview/',
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -232,7 +232,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
     orgs.newRepo('security-handbook') {
       description: 'This repository contains the source for the Eclipse Foundation Security Handbook.',
       gh_pages_build_type: 'workflow',
-      homepage: 'https://eclipse-csi.github.io/security-handbook/',
+      homepage: 'https://csi.eclipse.dev/security-handbook/',
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 0,
@@ -275,7 +275,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
       gh_pages_build_type: 'legacy',
       gh_pages_source_branch: 'gh-pages',
       gh_pages_source_path: '/',
-      homepage: 'https://eclipse-csi.github.io/helm-charts/',
+      homepage: 'https://csi.eclipse.dev/helm-charts/',
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -300,7 +300,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
     },
     orgs.newRepo('codesign-tools') {
       description: 'Tools for signing artifacts via the SignPath REST API',
-      homepage: 'https://eclipse-csi.github.io/codesign-tools/',
+      homepage: 'https://csi.eclipse.dev/codesign-tools/',
       gh_pages_build_type: 'workflow',
       environments: [
         orgs.newEnvironment('github-pages') {
@@ -334,7 +334,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
     orgs.newRepo('advisoryhub') {
       description: 'Eclipse CSI AdvisoryHub Application',
       gh_pages_build_type: 'workflow',
-      homepage: 'https://eclipse-csi.github.io/advisoryhub/dev/',
+      homepage: 'https://csi.eclipse.dev/advisoryhub/dev/',
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
