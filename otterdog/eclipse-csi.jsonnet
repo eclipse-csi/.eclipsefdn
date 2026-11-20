@@ -348,5 +348,12 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
         'vdp',
       ],
     },
+    orgs.newRepo('sealform') {
+      description: 'Eclipse CSI Sealform: manage a https://signpath.io organization as code.',
+      topics+: [
+        'signpath',
+        'codesigning',
+      ],
+    },
   ],
 }
