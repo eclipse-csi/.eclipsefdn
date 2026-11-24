@@ -335,6 +335,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
       description: 'Eclipse CSI AdvisoryHub Application',
       gh_pages_build_type: 'workflow',
       homepage: 'https://csi.eclipse.dev/advisoryhub/dev/',
+      private_vulnerability_reporting_enabled: true,
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
