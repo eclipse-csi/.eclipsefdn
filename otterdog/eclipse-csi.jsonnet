@@ -126,7 +126,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
       rulesets: [
         customRuleset('main') {
           bypass_actors+: [
-            '@eclipse-csi/technology-csi-committers',
+            '@eclipse-csi/technology-csi-committers:pull_request',
           ],
         },
         protectTags(),
@@ -184,7 +184,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
       rulesets: [
         customRuleset('main') {
           bypass_actors+: [
-            '@eclipse-csi/technology-csi-committers',
+            '@eclipse-csi/technology-csi-committers:pull_request',
           ],
           required_status_checks+: {
             status_checks+: [
@@ -292,7 +292,7 @@ orgs.newOrg('technology.csi', 'eclipse-csi') {
       rulesets: [
         customRuleset('main') {
           bypass_actors+: [
-            '@eclipse-csi/technology-csi-committers',
+            '@eclipse-csi/technology-csi-committers:pull_request',
           ],
         },
         protectTags(),
